@@ -1,5 +1,14 @@
 extends ../layouts/default
 
+block head
+	//- Not sure if data.post.content.brief is correct, need to double check
+	meta(name="description" content=data.post.content.brief)
+	//- Twitter Markup
+	meta(property="og:title" content=data.post.title)
+	meta(property="og:description" content=data.post.content.brief)
+	if data.post.image.exists
+		meta(name="og:image" content=data.post._.image)
+		
 block content
 	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
 		article

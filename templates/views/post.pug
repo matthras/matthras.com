@@ -6,6 +6,7 @@ block head
 	//- Twitter Markup
 	meta(property="og:title" content=data.post.title)
 	meta(property="og:description" content=data.post.content.brief)
+	meta(property="og:url" content='/blog/post/'+data.post.slug)
 	if data.post.image.exists
 		meta(name="og:image" content=data.post._.image)
 		
@@ -18,7 +19,8 @@ block content
 				h2 Invalid Post.
 			else
 				header
-					h1= data.post.title
+					a(href='/blog/post/'+data.post.slug) 
+						h1= data.post.title
 					h5 Posted 
 						if data.post.publishedDate
 							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')} 

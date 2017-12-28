@@ -9,7 +9,8 @@ block head
 	meta(property="og:url" content='/blog/post/'+data.post.slug)
 	if data.post.image.exists
 		meta(name="og:image" content=data.post._.image)
-		
+	
+	link(href="/styles/prism/prism.css" rel="stylesheet")
 block content
 	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
 		article
@@ -38,3 +39,7 @@ block content
 					if data.post.image.exists
 						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
 					!= data.post.content.full
+
+
+block js
+	script(src="/js/prism/prism.js")

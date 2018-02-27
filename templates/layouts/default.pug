@@ -33,6 +33,7 @@ html(lang="en")
 		meta(name="theme-color" content="#ffffff")
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
+    link(href="/styles/fontawesome/fontawesome.min.css""," rel="stylesheet")
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -80,6 +81,15 @@ html(lang="en")
 								li: a(href='/keystone/signout') Sign Out
 							else
 								li: a(href='/keystone/signin') Sign In
+              li: 
+                a(href="https://twitter.com/matthras/") 
+                i.fa.fa-twitter
+              li: 
+                a(href="https://www.linkedin.com/in/matthewypmack/") 
+                i.fa.fa-linkedin
+              li: 
+                a(href="https://www.github.com/matthras/") 
+                i.fa.fa-github
 
 		//- BODY
 		#body
